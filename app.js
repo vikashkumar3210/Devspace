@@ -21,8 +21,7 @@ app.use(routes);
 // userlogin
 
 
-// .mongoose.connect('mongodb+srv://logan:logan%402000@inotebook-cluster.cflpmda.mongodb.net/developerDB?retryWrites=true&w=majority')
-mongoose.connect("mongodb://127.0.0.1:27017/developerDB")
+ .mongoose.connect('mongodb+srv://logan:logan%402000@inotebook-cluster.cflpmda.mongodb.net/developerDB?retryWrites=true&w=majority')
     .then(() => {
         console.log("connected");
         app.listen(process.env.PORT || 3000, () => {
