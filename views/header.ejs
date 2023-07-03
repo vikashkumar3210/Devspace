@@ -1,0 +1,22 @@
+<%- include('head'); -%>
+    <div class="container-fluid">
+        <!-- header part -->
+        <header class="row">
+            <div class="col  d-flex justify-content-center align-items-center ">
+                <h2><a href="/homeLogged">DevSpace</a></h2>
+            </div>
+            <div class="col  d-flex  justify-content-around align-items-center " id="invisible_content">
+                <a href="#" class="text-white mr-2 header-search-icon" title="Search" data-placement="bottom" ><i
+                        class="fas fa-search"></i></a>
+                <span id="chat-adder" class="text-white mr-2 header-chat-icon" title="Chat" data-toggle="tooltip" style="cursor:pointer;"
+                    data-placement="bottom"><i class="fas fa-comment"></i></span>
+                <a href="/myProfile" class="mr-2"><img title="My Profile" data-toggle="tooltip" data-placement="bottom"
+                        style="width: 32px; height: 32px; border-radius: 16px;"
+                        src=<%= hashEmail %> ></a>
+                <a class="btn btn-sm btn-success mr-2" href="/createPost">Create Post</a>
+                <form action='/logout' method="POST" class="d-inline">
+                    <button  type='submit' class="btn btn-sm btn-secondary">Sign Out</button>
+                </form>
+            </div>
+
+        </header>

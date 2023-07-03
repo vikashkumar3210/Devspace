@@ -1,0 +1,24 @@
+<%- include('header'); -%>
+
+    <!-- body/main part -->
+    <main class="row">
+        <div class="col">
+            <form class="mx-auto" style="max-width:60%; min-width:300px;" action="/editPost/<%= post._id %>" method="Post">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="title" required name="postTitle" value="<%= post.postTitle %>">
+                </div>
+                <div class="form-group">
+                    <label for="content">Devloper Content</label>
+                    <textarea rows="10" cols="30" type="text" class="form-control" id="content" required
+                        name="developerContent"><%= post.developerContent %></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Update post</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <!-- footer -->
+    <%- include('footer'); -%>

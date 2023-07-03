@@ -1,0 +1,40 @@
+<%- include('header'); -%>
+<% if (success.length) { %>
+    <div class="row text-center alert alert-success"><h5 ><%= success[0] %></h4> </div>
+  <% } %>
+  <% if (error.length) { %>
+    <div class="row text-center alert alert-danger"><h5 ><%= error[0] %></h4> </div>
+  <% } %>
+    <!-- body/main part -->
+    <main class="row ">
+        <div class="container w-50 card bg-light mb-3 " style="padding:0;">
+            <div class="d-flex justify-content-between align-items-center card-header" >
+                <h2>
+                    <%= sPost.postTitle %>
+                </h2>
+                <span class='d-flex justify-content-between align-items-center'>
+                    <a href="/editPost/<%=sPost.postId%>" class="text-primary " title="edit" data-toggle="tooltip" data-placement="top"><i
+                            class="fas fa-edit"></i></a>
+                    <form action="/singlePost/<%= sPost.postId %>" method="Post">
+                        <button class="delete-post-button text-dange " title="delete" data-toggle="tooltip"
+                            data-placement="top"><i class="fa fa-trash"></i></button>
+                    </form>
+                </span>
+            </div>
+            <p class="text-muted small mb-4 p-2">
+                <a href="#" class="mr-2"><img title="My Profile" data-toggle="tooltip" data-placement="bottom"
+                        style="width: 20px; height: 20px; border-radius: 16px;" src=<%=sPost.imgSrc %>></a>
+                posted by
+                <a href="#" style="color:blue;">
+                    <%= sPost.name %>
+                </a> on <%= sPost.date %>
+            </p>
+                <p class="p-2">
+                    <%=sPost.content %>
+                </p>
+
+        </div>
+
+    </main>
+    <!-- footer -->
+    <%- include('footer'); -%>

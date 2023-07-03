@@ -1,0 +1,26 @@
+<%- include('header'); -%>
+<% if (success.length) { %>
+    <div class="row text-center alert alert-danger"><h5 ><%= success[0] %></h4> </div>
+  <% } %>
+    <!-- body/main part -->
+    <main class="row">
+        <div class="col">
+            <form class="mx-auto" style="max-width:60%; min-width:300px;" action="/createPost" method="post">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="title" required name="postTitle" >
+                </div>
+                <div class="form-group">
+                    <label for="content">Devloper Content</label>
+                    <textarea rows="10" cols="30" type="text" class="form-control" id="content" required
+                        name="developerContent"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">create post</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <!-- footer -->
+    <%- include('footer'); -%>

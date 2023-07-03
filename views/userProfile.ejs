@@ -1,0 +1,91 @@
+<%- include('header'); -%>
+    <% if (success.length) { %>
+        <div class="row text-center alert alert-success">
+            <h5>
+                <%= success[0] %>
+                    </h4>
+        </div>
+        <% } %>
+            <% if (error.length) { %>
+                <div class="row text-center alert alert-success">
+                    <h5>
+                        <%= error[0] %>
+                            </h4>
+                </div>
+                <% } %>
+                    <!-- body/main part -->
+                    <main class="row">
+                        <div class=" changer container w-50">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <a href="#" class="p-2"><img title="My Profile" data-toggle="tooltip"
+                                        data-placement="bottom" style="width: 25px; height: 25px; border-radius: 16px;"
+                                        src=<%=userEmail %>></a>
+                                <h2 class="p-2">
+                                    <%= name %>
+                                </h2>
+                                <% if(!userFollow) { %>
+                                    <form action="" method="post">
+                                        <button class="btn btn-primary btn-sm ">Follow <i
+                                                class="fa-solid fa-user-plus fa-sm"
+                                                style="color: #fdfcfc;"></i></button>
+                                    </form>
+                                    <% } %>
+                                        <% if(userFollow) { %>
+                                            <form action="/userProfile/unFollow/<%= followed_id %>" method="Delete">
+                                                <button class="btn btn-primary btn-sm ">Unfollow <i
+                                                        class="fa-solid fa-user-plus fa-sm"
+                                                        style="color: #fdfcfc;"></i></button>
+                                            </form>
+                                            <% } %>
+                            </div>
+                            <h5>
+                                <%= profile %>
+                            </h5>
+                            <!-- check -->
+
+                            <!-- <div class="list-group"> -->
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Post
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <% if(postData.length){ %>
+                                                <% postData.forEach((postItem)=>{ %>
+
+                                                    <p class="text-muted small mb-4 postTitleD list-group-item list-group-item-action"
+                                                        onclick="redirectFunction(this)" style="cursor:pointer;"
+                                                        name=<%=postItem.postId %>>
+                                                        <a href="#" class="mr-2"><img title="My Profile"
+                                                                data-toggle="tooltip" data-placement="bottom"
+                                                                style="width: 20px; height: 20px; border-radius: 16px;"
+                                                                src=<%=postItem.imgSrc %>></a><strong>
+                                                            <%= postItem.postTitle %>
+                                                        </strong> on <%= postItem.date %>
+                                                    </p>
+                                                    <% }) %>
+                                                        <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- <check -->
+                        </div>
+
+                    </main>
+                    <!-- footer -->
+                    <%- include('footer'); -%>
+                        <script>
+                            function redirectFunction(e) {
+                                const id = e.getAttribute("name");
+
+                                window.location.href = `/singlePost/${id}`;
+                            }
+                        </script>

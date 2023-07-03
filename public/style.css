@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+label {
+    margin: 4px 0;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.signup-field:valid {
+    box-shadow: 1px 1px 2px green inset, -1px -1px 2px green inset;
+    color: green;
+
+}
+
+.signup-field:invalid {
+    box-shadow: 1px 1px 2px red inset, -1px -1px 2px red inset;
+    color: red;
+
+}
+
+/* home_guest Css */
+header {
+    box-shadow: 0 2px 2px gray;
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    background-color: #292929;
+    padding: 10px 0;
+    color: white;
+    border-radius: 4px;
+
+
+}
+
+main {
+    height:80%;
+    padding: 20px;
+}
+
+main button {
+    margin: 4px 0;
+}
+
+.geek_space {
+    width: 70%;
+}
+
+main .col-6 form {
+    width: 70%;
+}
+
+footer {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid black;
+    opacity: 0.8;
+}
+
+/* post.ejs css */
+.delete-post-button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin: 0 10px;
+    color: red;
+}
+
+/* chat-box css */
+.chat-wrapper {
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.chat-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.chat-bar-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+
+}
+
+.chat-log {
+    height: 60%;
+    overflow: auto;
+}
+
+.chat-self,
+.chat-other {
+    padding: 4px;
+}
+
+.chat-inner-message {
+    width: 60%;
+    background-color: gainsboro;
+    border-radius: 4px;
+    padding: 2px;
+    font-size: 0.75rem;
+
+}
+
+.chat-form {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.chart-form form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chat-form input {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 4px;
+
+}
+
+.postD {
+    box-shadow: 1px 1px 1px gray, -1px -1px 1px gray;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 10px;
+    background-color: aliceblue;
+}
+
+.postTitleD {
+    transition: all 0.3s ease-in-out;
+
+}
+
+.postTitleD:hover {
+    border-color: gray;
+    font-size: 1.1rem;
+}
+
+/* Mobile screen css */
+@media only screen and (max-width:450px) {
+    #invisible_content{
+        display:none;
+    }
+}

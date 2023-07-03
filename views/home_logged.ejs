@@ -1,0 +1,36 @@
+<%- include('header'); -%>
+<% if (success.length) { %>
+        <div class="row text-center alert alert-success"><h5 ><%= success[0] %></h4> </div>
+      <% } %>
+       
+        <!-- body/main part -->
+        <main class="row" >
+         <% if(setPost.length) { %> 
+            <% setPost.forEach((Item)=>{ %> 
+          <div class="row mb-4">
+            <div class="col-12 container  w-50 card bg-light mb-3" style="padding:0;" >
+              <div class="d-flex justify-content-between align-items-center card-header">
+                  <h2><%= Item.postTitle %></h2>
+              </div>
+              <p class="text-muted small mb-4 p-2">
+                  <a href="/userProfile/<%= Item.username %>" class="mr-2"><img title="My Profile" data-toggle="tooltip" data-placement="bottom"
+                          style="width: 20px; height: 20px; border-radius: 16px;"
+                          src=<%= Item.imgSrc %>></a>
+                  posted by
+                  <a href="/userProfile/<%= Item.username %>" style="color:blue;"><%= Item.name %></a> on <%= Item.date %>
+              </p>
+              <div>
+                <p class="p-2 ">
+                    <%=Item.content %>
+                </p> 
+              </div>
+                 
+            
+  </div>
+          </div>
+     <%   }) %>
+     <% } %>
+      </main>
+        <!-- footer -->
+        <%- include('footer'); -%>
+       
